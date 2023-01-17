@@ -19,6 +19,7 @@
     "package.json"
   ],
   "dependencies": {
+    "find-up-json": "^2.0.1",
     "tiny-dirname": "^1.0.0"
   },
   "devDependencies": {

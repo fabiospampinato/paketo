@@ -3,7 +3,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
-import process from 'node:process';
+import findUp from 'find-up-json';
 import dirname from 'tiny-dirname';
 import type {Package} from './types';
 
@@ -11,11 +11,11 @@ import type {Package} from './types';
 
 const read = (): Package => {
 
-  const pkgPath = path.join ( process.cwd (), 'package.json' );
-  const pkgContent = fs.readFileSync ( pkgPath, 'utf8' );
-  const pkg = JSON.parse ( pkgContent );
+  const pkg = findUp ( 'package.json' );
 
-  return pkg;
+  if ( !pkg ) throw new Error ( 'Could not find a "package.json" file' );
+
+  return pkg.content;
 
 };
 
