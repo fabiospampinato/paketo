@@ -2,7 +2,7 @@
   "name": "paketo",
   "repository": "github:fabiospampinato/paketo",
   "description": "A tiny library for importing your package.json, with proper types!",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "main": "dist/index.js",
   "exports": "./dist/index.js",
