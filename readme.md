@@ -19,13 +19,15 @@ A tiny library for importing your `package.json`, with proper types!
 ## Install
 
 ```sh
-npm install --save paketo
+npm install paketo
 ```
 
 ## Usage
 
 ```ts
 import Package from 'paketo';
+
+// Let's read something from our package.json, with proper types
 
 console.log ( Package.name ); // => paketo
 ```
