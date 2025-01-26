@@ -2,6 +2,7 @@
   "name": "paketo",
   "repository": "github:fabiospampinato/paketo",
   "description": "A tiny library for importing your package.json, with proper types!",
+  "license": "MIT",
   "version": "1.0.1",
   "type": "module",
   "main": "dist/index.js",
@@ -19,13 +20,13 @@
     "package.json"
   ],
   "dependencies": {
-    "find-up-json": "^2.0.1",
-    "tiny-dirname": "^1.0.0"
+    "find-up-json": "^2.0.5",
+    "tiny-dirname": "^1.0.2"
   },
   "devDependencies": {
-    "@types/node": "^20.4.9",
-    "fava": "^0.2.1",
-    "tsex": "^3.0.1",
-    "typescript": "^5.1.6"
+    "@types/node": "^18.19.74",
+    "fava": "^0.3.4",
+    "tsex": "^4.0.2",
+    "typescript": "^5.7.3"
   }
 }
