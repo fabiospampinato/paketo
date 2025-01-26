@@ -27,9 +27,16 @@ const refresh = ( pkg: Package ): Package => {
     const distPath = dirname ( import.meta.url );
     const typesPath = path.join ( distPath, 'types.d.ts' );
     const typesContent = fs.readFileSync ( typesPath, 'utf8' );
-    const typesContentNext = typesContent.replace ( /=.+;$/m, () => `= ${pkgContent};` );
+    const typesRe = /= (.+);$/m;
+    const typesMatch = typesRe.exec ( typesContent );
 
-    fs.writeFileSync ( typesPath, typesContentNext );
+    if ( typesMatch && typesMatch[1] !== pkgContent ) {
+
+      const typesContentNext = typesContent.replace ( typesRe, () => `= ${pkgContent};` );
+
+      fs.writeFileSync ( typesPath, typesContentNext );
+
+    }
 
   } catch {}
 
